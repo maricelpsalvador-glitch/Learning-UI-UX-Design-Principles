@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Your Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="services-page">
+
+  <header class="site-header" role="banner">
+    <div class="container nav-container d-flex justify-content-between align-items-center py-3">
+      <div class="logo">
+        <a href="index.html" aria-label="Go to About section">
+          <img src="https://placehold.co/100x100" alt="Maricel logo" class="img-fluid" style="max-height: 60px;">
+        </a>
+      </div>
+
+      <!-- Hamburger toggle -->
+      <button class="nav-toggle btn btn-outline-dark d-md-none" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
+        ☰
+      </button>
+
+      <nav class="main-nav d-none d-md-block" role="navigation" aria-label="Main site navigation">
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="index.html" aria-current="page">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="main-nav d-md-none collapse" id="mobile-menu" role="navigation">
+      <ul class="nav flex-column text-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const toggleButton = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleButton.addEventListener('click', () => {
+      const expanded = toggleButton.getAttribute('aria-expanded') === 'true';
+      toggleButton.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('show');
+    });
+  </script>
+
+  <main class="services-container container py-5">
+    <div class="services-title text-center mb-4">
+      <h1>Services</h1>
+    </div>
+
+    <div class="services-flex">
+  <div class="service-card">
+    <img src="https://placehold.co/600x600" alt="Sample 1">
+    <h5>Bold Ideas</h5>
+    <p>Ommodi consequatur? Quis autem vel eum iure reprehenderit qui. </p>
+  </div>
+  <div class="service-card">
+    <img src="https://placehold.co/600x600" alt="Sample 2">
+    <h5>Controlled Chaos</h5>
+    <p>Ommodi consequatur? Quis autem vel eum iure reprehenderit qui.</p>
+  </div>
+  <div class="service-card">
+    <img src="https://placehold.co/600x600" alt="Sample 3">
+    <h5>Creative Pulse</h5>
+    <p>Ommodi consequatur? Quis autem vel eum iure reprehenderit qui.</p>
+  </div>
+</div>
+  </main>
+
+  <footer class="main-footer text-center py-4">
+    <a href="#li" class="icon-sm mx-2"><img src="images/li.png" alt="LinkedIn" style="max-height: 30px;"></a>
+    <a href="#ig" class="icon-sm mx-2"><img src="images/ig.png" alt="Instagram" style="max-height: 30px;"></a>
+    <a href="#fb" class="icon-sm mx-2"><img src="images/fb.png" alt="Facebook" style="max-height: 30px;"></a>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

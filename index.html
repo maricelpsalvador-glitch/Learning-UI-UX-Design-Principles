@@ -1,62 +1,315 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MySite Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <div class="logo">MySite</div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+	<!-- HTML -->
+<header class="site-header" role="banner">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="#id-home" aria-label="Go to About section">
+        <img src="https://placehold.co/100x100" alt="Maricel logo">
+      </a>
     </div>
-  </nav>
+	      <!-- Hamburger toggle -->
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
+      ☰
+    </button>
+    <nav class="main-nav" role="navigation" aria-label="Main site navigation">
+      <ul>
+        <li><a href="#id-about" aria-current="page">About</a></li>
+        <li><a href="#id-portfolio">Services</a></li>
+        <li><a href="#id-gallery-section">Gallery</a></li>
+        <li><a href="#id-contact-me">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+	
+	<script>
+  const toggleButton = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.main-nav');
 
-  <section class="about-me">
-    <h1>About Me</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-    <a href="mailto:yourname@example.com" class="contact-button">Contact Me</a>
-  </section>
+  toggleButton.addEventListener('click', () => {
+    const expanded = toggleButton.getAttribute('aria-expanded') === 'true';
+    toggleButton.setAttribute('aria-expanded', !expanded);
+    navMenu.classList.toggle('show');
+  });
+</script>
+	
+<!---Section 1--->
+	<div class="carousel-container" id="id-home">
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
 
-  <main class="portfolio-section">
-    <h2>Graphic Design Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="https://placehold.co/400" alt="Logo Design" />
-        <p>At vero eos et accusamus et iusto odio dignissimos ducimus</p>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://placehold.co/400" alt="Poster Design" />
-        <p>Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://placehold.co/400" alt="Packaging Design" />
-        <p>Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias</p>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="carousel-art"><img src="https://placehold.co/400x400" class="d-block w-100" alt="Hero"></div>
+      <div class="carousel-caption">
+        <div class="caption-box">
+          <h5>Imagine.</h5>
+          <p>Ed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+        </div>
       </div>
     </div>
-  </main>
 
-  <footer>
-    <ul class="footer-links">
-      <li><a href="#"><img src="images/Asset 80@2x.png" alt="LinkedIn" /></a></li>
-      <li><a href="#"><img src="images/Asset 79@2x.png" alt="Facebook" /></a></li>
-      <li><a href="#"><img src="images/Asset 76@2x.png" alt="Instagram" /></a></li>
-    </ul>
-  </footer>
+    <div class="carousel-item">
+      <div class="carousel-art"><img src="https://placehold.co/400x400" class="d-block w-100" alt="Hero"></div>
+      <div class="carousel-caption">
+        <div class="caption-box">
+          <h5>Collaborate.</h5>
+          <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+        </div>
+      </div>
+    </div>
 
-  <script>
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('active');
-    }
-  </script>
+    <div class="carousel-item">
+      <div class="carousel-art"><img src="https://placehold.co/400x400" class="d-block w-100" alt="Hero"></div>
+      <div class="carousel-caption">
+        <div class="caption-box">
+          <h5>Create.</h5>
+          <p>Ommodi consequatur? Quis autem vel eum iure reprehenderit qui.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+		</div>
+	<!---Style--->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	
+<!---Section 2--->
+<div class="about" id="id-about">
+	<div class="about-text">
+		<p style="font-size:1.2rem;"><b>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</b> </p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+	<p>molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+	</div>
+	<button type="button" class="btn-btn-primary" data-bs-toggle="modal" data-bs-target="#aboutModal">
+  	Let's talk.
+	</button>
+</div>
+	<!-- Modal -->
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#F54A8B; color:white;">
+        <h5 class="modal-title" id="aboutModalLabel">Let’s Talk</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Thanks for stopping by! I’d love to hear your ideas, questions, or wildest creative dreams.</p>
+        <p>Whether it’s a collaboration, a concept, or just a hello. Drop me a message and let’s make something beautiful.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="#id-contact-me" class="btn btn-primary" style="background-color:#F54A8B; border:none;" >Go to Contact</a>
+      </div>
+    </div>
+  </div>
+</div>
+	<!---Section 3--->
+	<div class="portfolio" id="id-portfolio">
+	<div class="portfolio-text">Services</div>
+	<div class="container my-5">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://placehold.co/400x400" class="card-img-top" alt="Sample 1">
+        <div class="card-body">
+          <h5 class="card-title">Bold Ideas</h5>
+          <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+          <a href="services.html" class="btn btn-primary">Explore</a>
+        </div>
+      </div>
+    </div>
+<div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://placehold.co/400x400" class="card-img-top" alt="Sample 2">
+        <div class="card-body">
+          <h5 class="card-title">Controlled Chaos</h5>
+          <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+          <a href="services.html" class="btn btn-primary">Discover</a>
+        </div>
+      </div>
+    </div>
+<div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://placehold.co/400x400" class="card-img-top" alt="Sample 3">
+        <div class="card-body">
+          <h5 class="card-title">Bold Ideas</h5>
+          <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+          <a href="services.html" class="btn btn-primary">View More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+	<div class="container my-5">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://placehold.co/400x400" class="card-img-top" alt="Sample 1">
+        <div class="card-body">
+          <h5 class="card-title">Bold Ideas</h5>
+          <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+          <a href="services.html" class="btn btn-primary">Explore</a>
+        </div>
+      </div>
+    </div>
+<div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://placehold.co/400x400" class="card-img-top" alt="Sample 2">
+        <div class="card-body">
+          <h5 class="card-title">Bold Ideas</h5>
+          <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+          <a href="services.html" class="btn btn-primary">Discover</a>
+        </div>
+      </div>
+    </div>
+<div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://placehold.co/400x400" class="card-img-top" alt="Sample 3">
+        <div class="card-body">
+          <h5 class="card-title">Bold Ideas</h5>
+          <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+          <a href="services.html" class="btn btn-primary">View More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!---Section 4--->
+	<section class="gallery-section" id="id-gallery-section">
+  <h2 class="gallery-title">Gallery</h2>
+  <div class="gallery-grid">
+    
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://placehold.co/400x400" alt="Front Image">
+        </div>
+        <div class="flip-card-back">
+          <h5>Bold Ideas</h5>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+      </div>
+    </div>
+	  <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://placehold.co/400x400" alt="Front Image">
+        </div>
+        <div class="flip-card-back">
+          <h5>Bold Ideas</h5>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+      </div>
+    </div>
+	  
+	      <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://placehold.co/400x400" alt="Front Image">
+        </div>
+        <div class="flip-card-back">
+          <h5>Bold Ideas</h5>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+      </div>
+    </div>
+	  <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://placehold.co/400x400" alt="Front Image">
+        </div>
+        <div class="flip-card-back">
+          <h5>Bold Ideas</h5>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+      </div>
+    </div>
+	  <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://placehold.co/400x400" alt="Front Image">
+        </div>
+        <div class="flip-card-back">
+          <h5>Bold Ideas</h5>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+      </div>
+    </div>
+	  <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://placehold.co/400x400" alt="Front Image">
+        </div>
+        <div class="flip-card-back">
+          <h5>Bold Ideas</h5>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+      </div>
+    </div>
+</div>
+	
+</section>
+<!---Section 5--->
+	
+<section class="contact-me" id="id-contact-me">
+  <div class="container">
+	  
+    <h2>Let's Connect</h2>
+    <p class="intro-text">Whether it's a spark of collaboration or a whisper of feedback, I’d love to hear from you.</p>
+	  
+	  <div class="form-box">
+    <form class="contact-form">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Maricel Salvador" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Share your thoughts..." required></textarea>
+
+      <button class="send-message" type="submit">Send Message</button>
+    </form>
+	</div>
+	  
+  </div>
+</section>
+<!---Section 6--->
+<div class="main-footer">
+	
+	<a href="#li" class="icon-sm"><img src="images/li.png"></a>
+	<a href="#ig" class="icon-sm"><img src="images/ig.png"></a>
+	<a href="#fb" class="icon-sm"><img src="images/fb.png"></a>
+</div>
 </body>
 </html>
